@@ -41,9 +41,9 @@ const projectLinks = [
     description: "查看個人介紹、作品整理與相關學習成果。",
   },
   {
-    label: "AEM 電解槽專題網站",
-    href: "https://aem-mobile-demo.pages.dev",
-    description: "查看 AEM 電解槽最佳化互動展示平台的雲端展示成果。",
+    label: "AEM電解槽最佳化專題互動網站",
+    href: "https://aem-electrolyzer-optimization-site.pages.dev/",
+    description: "查看 AEM 電解槽最佳化專題互動網站的雲端展示成果。",
   },
 ];
 
