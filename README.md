@@ -112,8 +112,14 @@ git push -u origin main
 
 ## 公開網址
 
-Railway 部署完成後，可將網址填在這裡：
+GitHub 原始碼網址：
 
 ```txt
-https://你的-railway-public-url
+https://github.com/kungmengchien0814/ai-cloud-project-generator
+```
+
+Railway 公開網站網址：
+
+```txt
+https://ai-cloud-project-generator-production.up.railway.app
 ```
