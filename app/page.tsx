@@ -24,6 +24,19 @@ const author = [
   ["學號", "3B261084"],
 ];
 
+const projectLinks = [
+  {
+    label: "GitHub 原始碼",
+    href: "https://github.com/kungmengchien0814/ai-cloud-project-generator",
+    description: "查看本專案的 Next.js 原始碼、README 與版本紀錄。",
+  },
+  {
+    label: "Railway 公開網站",
+    href: "https://ai-cloud-project-generator-production.up.railway.app",
+    description: "開啟已部署到雲端平台的公開展示網站。",
+  },
+];
+
 export default function Home() {
   const [formData, setFormData] = useState<ProjectFormData>(initialFormData);
   const [generated, setGenerated] = useState<GeneratedIntro | null>(null);
@@ -110,6 +123,38 @@ export default function Home() {
           <GeneratedResult result={generated} />
         </div>
 
+        <section className="mt-10 rounded-lg border border-slate-200 bg-white/85 p-5 shadow-sm sm:p-6">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-bold text-coral">Project Links</p>
+              <h2 className="mt-2 text-2xl font-bold text-ink">專案連結</h2>
+            </div>
+            <p className="max-w-2xl text-sm leading-6 text-slate-600">
+              本專案已上傳至 GitHub，並透過 Railway 完成雲端部署，可直接使用公開網址展示成果。
+            </p>
+          </div>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+            {projectLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg border border-slate-200 bg-slate-50 p-4 transition hover:-translate-y-0.5 hover:border-mint hover:bg-white hover:shadow-sm"
+              >
+                <p className="text-sm font-bold text-ink">{link.label}</p>
+                <p className="mt-2 break-all text-sm font-semibold text-mint">
+                  {link.href}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {link.description}
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
+
         <footer className="mt-10 rounded-lg border border-slate-200 bg-white/80 p-5 text-sm leading-7 text-slate-700">
           <p className="font-bold text-ink">作者資訊</p>
           <p className="mt-2">
@@ -117,8 +162,8 @@ export default function Home() {
             3B261084
           </p>
           <p className="mt-2">
-            本專案使用 Next.js、TypeScript 與 Tailwind CSS 製作，並規劃部署至
-            Railway 產生公開網址。
+            本專案使用 Next.js、TypeScript 與 Tailwind CSS 製作，已上傳至
+            GitHub，並部署至 Railway 產生公開網址。
           </p>
         </footer>
       </div>
