@@ -132,8 +132,8 @@ https://ai-cloud-project-generator-production.up.railway.app
 https://kungmengchien.uk
 ```
 
-AEM 電解槽最佳化互動展示平台：
+AEM電解槽最佳化專題互動網站：
 
 ```txt
-https://aem-mobile-demo.pages.dev
+https://aem-electrolyzer-optimization-site.pages.dev/
 ```
