@@ -123,3 +123,15 @@ Railway 公開網站網址：
 ```txt
 https://ai-cloud-project-generator-production.up.railway.app
 ```
+
+個人資料網站：
+
+```txt
+https://kungmengchien.uk
+```
+
+AEM 電解槽最佳化互動展示平台：
+
+```txt
+https://aem-mobile-demo.pages.dev
+```
