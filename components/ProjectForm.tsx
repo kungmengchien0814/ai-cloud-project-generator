@@ -26,7 +26,7 @@ const fields: Array<{
   {
     key: "departmentClass",
     label: "系所班級",
-    placeholder: "例如：智慧自動化工程系 四至三丙",
+    placeholder: "例如：智慧自動化工程系 四智三丙",
   },
   {
     key: "technologies",
