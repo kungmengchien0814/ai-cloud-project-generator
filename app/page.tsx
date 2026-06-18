@@ -35,6 +35,16 @@ const projectLinks = [
     href: "https://ai-cloud-project-generator-production.up.railway.app",
     description: "開啟已部署到雲端平台的公開展示網站。",
   },
+  {
+    label: "個人資料網站",
+    href: "https://kungmengchien.uk",
+    description: "查看個人介紹、作品整理與相關學習成果。",
+  },
+  {
+    label: "AEM 電解槽專題網站",
+    href: "https://aem-mobile-demo.pages.dev",
+    description: "查看 AEM 電解槽最佳化互動展示平台的雲端展示成果。",
+  },
 ];
 
 export default function Home() {
@@ -130,11 +140,11 @@ export default function Home() {
               <h2 className="mt-2 text-2xl font-bold text-ink">專案連結</h2>
             </div>
             <p className="max-w-2xl text-sm leading-6 text-slate-600">
-              本專案已上傳至 GitHub，並透過 Railway 完成雲端部署，可直接使用公開網址展示成果。
+              本專案已上傳至 GitHub，並透過 Railway 完成雲端部署，也整理了個人網站與其他專題展示成果。
             </p>
           </div>
 
-          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
             {projectLinks.map((link) => (
               <a
                 key={link.href}
