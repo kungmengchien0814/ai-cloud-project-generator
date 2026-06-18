@@ -47,6 +47,15 @@ const projectLinks = [
   },
 ];
 
+const completionStatus = [
+  "GitHub 已上傳",
+  "Railway 已部署",
+  "公開網址可瀏覽",
+  "不需要資料庫",
+  "不需要 API Key",
+  "Build 已通過",
+];
+
 export default function Home() {
   const [formData, setFormData] = useState<ProjectFormData>(initialFormData);
   const [generated, setGenerated] = useState<GeneratedIntro | null>(null);
@@ -120,6 +129,36 @@ export default function Home() {
           <div className="rounded-lg border border-slate-200 bg-white/80 p-4">
             <p className="text-2xl font-black text-ink">Railway</p>
             <p className="mt-1 text-sm text-slate-600">雲端部署平台</p>
+          </div>
+        </section>
+
+        <section className="mb-6 rounded-lg border border-slate-200 bg-white/85 p-5 shadow-sm sm:p-6">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-bold text-mint">Final Checklist</p>
+              <h2 className="mt-2 text-2xl font-bold text-ink">
+                作業完成狀態
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm leading-6 text-slate-600">
+              以下項目對應期末作業要求，方便展示時快速說明完成內容。
+            </p>
+          </div>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {completionStatus.map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
+              >
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-mint text-sm font-black text-white">
+                  ✓
+                </span>
+                <span className="text-sm font-semibold text-slate-700">
+                  {item}
+                </span>
+              </div>
+            ))}
           </div>
         </section>
 
