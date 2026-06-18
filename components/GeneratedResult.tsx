@@ -1,3 +1,6 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import { SectionCard } from "@/components/SectionCard";
 import type { GeneratedIntro } from "@/types/project";
 
@@ -5,7 +8,43 @@ type GeneratedResultProps = {
   result: GeneratedIntro | null;
 };
 
+function formatGeneratedText(result: GeneratedIntro) {
+  return [
+    "專題摘要",
+    result.summary,
+    "",
+    "技術亮點",
+    ...result.highlights.map((item, index) => `${index + 1}. ${item}`),
+    "",
+    "預期效益",
+    ...result.benefits.map((item, index) => `${index + 1}. ${item}`),
+    "",
+    "雲端部署說明",
+    result.deployment,
+  ].join("\n");
+}
+
 export function GeneratedResult({ result }: GeneratedResultProps) {
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "failed">(
+    "idle",
+  );
+
+  const generatedText = useMemo(
+    () => (result ? formatGeneratedText(result) : ""),
+    [result],
+  );
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(generatedText);
+      setCopyStatus("copied");
+      window.setTimeout(() => setCopyStatus("idle"), 2000);
+    } catch {
+      setCopyStatus("failed");
+      window.setTimeout(() => setCopyStatus("idle"), 2000);
+    }
+  }
+
   if (!result) {
     return (
       <aside className="flex min-h-[28rem] items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white/70 p-8 text-center shadow-sm">
@@ -24,11 +63,24 @@ export function GeneratedResult({ result }: GeneratedResultProps) {
 
   return (
     <div className="space-y-4">
-      <div className="rounded-lg border border-mint/30 bg-mint/10 px-5 py-4">
-        <p className="text-sm font-semibold text-mint">已生成專題介紹</p>
-        <p className="mt-1 text-sm text-slate-700">
-          以下內容可作為期末展示、README 或簡報摘要的基礎。
-        </p>
+      <div className="flex flex-col gap-3 rounded-lg border border-mint/30 bg-mint/10 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold text-mint">已生成專題介紹</p>
+          <p className="mt-1 text-sm text-slate-700">
+            以下內容可作為期末展示、README 或簡報摘要的基礎。
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="rounded-lg bg-ink px-4 py-2 text-sm font-bold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-ink/20"
+        >
+          {copyStatus === "copied"
+            ? "已複製"
+            : copyStatus === "failed"
+              ? "複製失敗"
+              : "複製內容"}
+        </button>
       </div>
 
       <SectionCard eyebrow="Summary" title="專題摘要">
