@@ -4,7 +4,7 @@ const fallback = {
   projectName: "本雲端專題",
   members: "本組成員",
   departmentClass: "課程小組",
-  technologies: "Next.js、TypeScript、Tailwind CSS 與 Railway",
+  technologies: "Next.js、TypeScript、Tailwind CSS、Cloudflare Pages",
   goal: "建立一個可展示、可部署且操作清楚的雲端應用程式",
   result: "完成一個具備互動介面與自動生成內容的網站",
 };
@@ -52,7 +52,7 @@ export function generateProjectIntro(data: ProjectFormData): GeneratedIntro {
     "不依賴資料庫與 API Key，降低部署複雜度，也更適合課堂作業展示。",
   ];
 
-  const deployment = `${projectName} 可先上傳至 GitHub，再透過 Railway 連接 Repository 進行自動部署。Railway 會安裝專案套件、執行 npm run build，並產生可公開瀏覽的網址，讓老師與同學能直接在線上操作此 Next.js App。`;
+  const deployment = `${projectName} 可先上傳至 GitHub，再於 Cloudflare Pages 連接 Repository。執行 npm run build 產生 out 靜態檔案後，由 Cloudflare Pages 發佈並提供公開網址。資料輸入、內容生成與複製功能在瀏覽器內執行，不需要資料庫或 AI API Key。`;
 
   return {
     summary,
