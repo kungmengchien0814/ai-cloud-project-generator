@@ -31,7 +31,7 @@ const fields: Array<{
   {
     key: "technologies",
     label: "使用技術",
-    placeholder: "例如：Next.js, TypeScript, Tailwind CSS, Railway",
+    placeholder: "例如：Next.js, TypeScript, Tailwind CSS, Cloudflare Pages",
   },
   {
     key: "goal",

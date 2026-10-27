@@ -10,10 +10,10 @@ const initialFormData: ProjectFormData = {
   projectName: "AI 雲端專題介紹生成器",
   members: "龔孟謙",
   departmentClass: "國立勤益科技大學 智慧自動化工程系 四智三丙",
-  technologies: "Next.js, TypeScript, Tailwind CSS, Railway, GitHub",
+  technologies: "Next.js, TypeScript, Tailwind CSS, Cloudflare Pages, GitHub",
   goal: "建立一個不需要資料庫與 API Key 的雲端應用，讓使用者能快速產生期末專題介紹內容。",
   result:
-    "完成可輸入資料、模擬 AI 生成介紹、響應式畫面設計，並可上傳 GitHub 與部署 Railway 的 Next.js App。",
+    "完成資料輸入、模擬 AI 生成介紹與響應式畫面設計，可靜態匯出並部署到 Cloudflare Pages。",
 };
 
 const author = [
@@ -31,9 +31,9 @@ const projectLinks = [
     description: "查看本專案的 Next.js 原始碼、README 與版本紀錄。",
   },
   {
-    label: "Railway 公開網站",
-    href: "https://ai-cloud-project-generator-production.up.railway.app",
-    description: "開啟已部署到雲端平台的公開展示網站。",
+    label: "本專案展示網站",
+    href: "/",
+    description: "目前網站首頁；原 Railway 試用已到期，改採 Cloudflare Pages 靜態部署。",
   },
   {
     label: "個人資料網站",
@@ -49,8 +49,8 @@ const projectLinks = [
 
 const completionStatus = [
   "GitHub 已上傳",
-  "Railway 已部署",
-  "公開網址可瀏覽",
+  "支援 Cloudflare Pages",
+  "靜態匯出版本",
   "Next.js 專案",
   "不需要 API Key",
   "Build 已通過",
@@ -127,7 +127,7 @@ export default function Home() {
             <p className="mt-1 text-sm text-slate-600">API Key 需求</p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white/80 p-4">
-            <p className="text-2xl font-black text-ink">Railway</p>
+            <p className="text-xl font-black text-ink">Cloudflare Pages</p>
             <p className="mt-1 text-sm text-slate-600">雲端部署平台</p>
           </div>
         </section>
@@ -149,7 +149,7 @@ export default function Home() {
               <h2 className="mt-2 text-2xl font-bold text-ink">專案連結</h2>
             </div>
             <p className="max-w-2xl text-sm leading-6 text-slate-600">
-              本專案已上傳至 GitHub，並透過 Railway 完成雲端部署，也整理了個人網站與其他專題展示成果。
+              本專案原始碼存放於 GitHub，提供 Cloudflare Pages 靜態部署版本，並整理個人網站與其他專題展示成果。
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export default function Home() {
               >
                 <p className="text-sm font-bold text-ink">{link.label}</p>
                 <p className="mt-2 break-all text-sm font-semibold text-mint">
-                  {link.href}
+                  {link.href === "/" ? "目前網站首頁" : link.href}
                 </p>
                 <p className="mt-3 text-sm leading-6 text-slate-600">
                   {link.description}
@@ -212,7 +212,7 @@ export default function Home() {
           </p>
           <p className="mt-2">
             本專案使用 Next.js、TypeScript 與 Tailwind CSS 製作，已上傳至
-            GitHub，並部署至 Railway 產生公開網址。
+            GitHub，採用 Cloudflare Pages 靜態部署；原 Railway 試用服務已停止。
           </p>
         </footer>
       </div>

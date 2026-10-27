@@ -18,8 +18,8 @@
 - 不需要資料庫
 - 不需要 API Key
 - 使用前端邏輯模擬 AI 內容生成
-- 適合部署到 Railway 並產生公開網址
-- 首頁提供作業完成狀態檢查，包含 Next.js 專案、GitHub 與 Railway 狀態
+- 使用 Next.js 靜態匯出，可部署至 Cloudflare Pages 免費方案
+- 首頁提供作業完成狀態檢查，包含 Next.js 專案、GitHub 與靜態匯出狀態
 - 生成結果可一鍵複製，方便整理到簡報或報告
 
 ## 功能說明
@@ -46,7 +46,8 @@
 - React
 - TypeScript
 - Tailwind CSS
-- Railway
+- Cloudflare Pages（目前部署目標）
+- Railway（歷史部署，試用到期已離線）
 - GitHub
 
 ## 本機執行方式
@@ -75,11 +76,15 @@ http://localhost:3000
 npm run build
 ```
 
-啟動正式版本：
+建置會產生 `out/` 靜態檔案。Cloudflare Pages 的輸出目錄須設為 `out`。
+
+本機預覽建置結果（先完成 build）：
 
 ```bash
 npm run start
 ```
+
+此指令僅供本機預覽，不是 Cloudflare 啟動指令；靜態版本不使用 `next start`。
 
 ## GitHub 上傳流程
 
@@ -92,25 +97,34 @@ git remote add origin https://github.com/你的帳號/ai-cloud-project-generator
 git push -u origin main
 ```
 
-## Railway 部署流程
+## Cloudflare Pages 部署流程
 
-1. 前往 [Railway](https://railway.app)
-2. 使用 GitHub 帳號登入
-3. 選擇 `New Project`
-4. 選擇 `Deploy from GitHub repo`
-5. 選取此專案的 GitHub Repository
-6. Railway 會自動安裝套件並執行建置
-7. 部署成功後，在 Networking 產生 Public Domain
-8. 將公開網址填入作業繳交資料
+1. 登入 [Cloudflare](https://dash.cloudflare.com/)，進入 `Workers & Pages`。
+2. 建立 **Pages** 專案，選擇匯入既有 Git repository 並連接 GitHub。
+3. 選擇 `kungmengchien0814/ai-cloud-project-generator`，正式分支設為 `main`。
+4. Framework preset 選 `Next.js (Static HTML Export)`；若無此選項，可選 `None` 手動填入。
+5. Build command 設為 `npm run build`。
+6. Build output directory 設為 `out`。
+7. Root directory 保持空白（Repository 根目錄），不需要環境變數、資料庫、Workers 或 API Key。
+8. 儲存並部署。部署成功後，複製 Cloudflare 實際提供的 `https://…pages.dev` 網址。
+9. 將新網址更新至本文件；後續推送 `main` 可觸發自動部署。
+
+設定依據：[Cloudflare 官方靜態 Next.js 部署指南](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/)。免費方案仍有平台使用限制。
+
+### 部署狀態與歷史報告
+
+目前已準備 Cloudflare Pages 靜態版本，尚未取得新的公開網址。原 Railway 試用已到期，服務離線。
+`deliverables/` 內 Word/PDF 是先前 Railway 部署時製作的歷史報告，尚未更新為 Cloudflare 版，不代表服務目前仍在線上。
+原作業指定 Railway，曾完成 Railway 部署；是否接受 Cloudflare 作為目前展示平台，需依老師規定。
 
 ## 期末展示建議
 
-1. 開啟 Railway 公開網址
+1. 開啟 Cloudflare Pages 部署完成後提供的公開網址
 2. 介紹專案主題與作者資訊
 3. 輸入一組專題資料
 4. 按下「生成專題介紹」
 5. 展示系統產生的四個內容區塊
-6. 說明專案已上傳 GitHub 並部署到 Railway
+6. 說明 GitHub 原始碼管理、Cloudflare 靜態部署，以及先前 Railway 部署紀錄
 
 ## 公開網址
 
@@ -120,7 +134,9 @@ GitHub 原始碼網址：
 https://github.com/kungmengchien0814/ai-cloud-project-generator
 ```
 
-Railway 公開網站網址：
+Cloudflare Pages 公開網站網址：待部署成功後填入實際網址。
+
+Railway 歷史網址（已離線，請勿作為目前展示入口）：
 
 ```txt
 https://ai-cloud-project-generator-production.up.railway.app
