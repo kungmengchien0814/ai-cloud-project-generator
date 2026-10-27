@@ -31,9 +31,9 @@ const projectLinks = [
     description: "查看本專案的 Next.js 原始碼、README 與版本紀錄。",
   },
   {
-    label: "本專案展示網站",
-    href: "/",
-    description: "目前網站首頁；原 Railway 試用已到期，改採 Cloudflare Pages 靜態部署。",
+    label: "Cloudflare Pages 公開網站",
+    href: "https://ai-cloud-project-generator.pages.dev/",
+    description: "免費靜態部署的專題展示網站；原 Railway 試用已到期。",
   },
   {
     label: "個人資料網站",
@@ -49,8 +49,8 @@ const projectLinks = [
 
 const completionStatus = [
   "GitHub 已上傳",
-  "支援 Cloudflare Pages",
-  "靜態匯出版本",
+  "Cloudflare Pages 已部署",
+  "公開網址可瀏覽",
   "Next.js 專案",
   "不需要 API Key",
   "Build 已通過",
@@ -149,7 +149,7 @@ export default function Home() {
               <h2 className="mt-2 text-2xl font-bold text-ink">專案連結</h2>
             </div>
             <p className="max-w-2xl text-sm leading-6 text-slate-600">
-              本專案原始碼存放於 GitHub，提供 Cloudflare Pages 靜態部署版本，並整理個人網站與其他專題展示成果。
+              本專案原始碼存放於 GitHub，已部署至 Cloudflare Pages，並整理個人網站與其他專題展示成果。
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export default function Home() {
               >
                 <p className="text-sm font-bold text-ink">{link.label}</p>
                 <p className="mt-2 break-all text-sm font-semibold text-mint">
-                  {link.href === "/" ? "目前網站首頁" : link.href}
+                  {link.href}
                 </p>
                 <p className="mt-3 text-sm leading-6 text-slate-600">
                   {link.description}

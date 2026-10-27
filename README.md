@@ -46,7 +46,7 @@
 - React
 - TypeScript
 - Tailwind CSS
-- Cloudflare Pages（目前部署目標）
+- Cloudflare Pages（目前公開網站）
 - Railway（歷史部署，試用到期已離線）
 - GitHub
 
@@ -111,10 +111,10 @@ git push -u origin main
 
 設定依據：[Cloudflare 官方靜態 Next.js 部署指南](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/)。免費方案仍有平台使用限制。
 
-### 部署狀態與歷史報告
+### 部署狀態與報告
 
-目前已準備 Cloudflare Pages 靜態版本，尚未取得新的公開網址。原 Railway 試用已到期，服務離線。
-`deliverables/` 內 Word/PDF 是先前 Railway 部署時製作的歷史報告，尚未更新為 Cloudflare 版，不代表服務目前仍在線上。
+2026-10-27 已完成 Cloudflare Pages 部署，公開網址為 https://ai-cloud-project-generator.pages.dev/ 。原 Railway 試用已到期，服務離線。
+`deliverables/` 內 Word/PDF 已同步更新為 Cloudflare 版本，並保留原 Railway 部署歷程說明。
 原作業指定 Railway，曾完成 Railway 部署；是否接受 Cloudflare 作為目前展示平台，需依老師規定。
 
 ## 期末展示建議
@@ -134,7 +134,9 @@ GitHub 原始碼網址：
 https://github.com/kungmengchien0814/ai-cloud-project-generator
 ```
 
-Cloudflare Pages 公開網站網址：待部署成功後填入實際網址。
+Cloudflare Pages 公開網站網址：
+
+[AI 雲端專題介紹生成器](https://ai-cloud-project-generator.pages.dev/)
 
 Railway 歷史網址（已離線，請勿作為目前展示入口）：
 
