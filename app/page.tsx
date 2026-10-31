@@ -21,7 +21,6 @@ const author = [
   ["系所", "智慧自動化工程系"],
   ["班級", "四智三丙"],
   ["姓名", "龔孟謙"],
-  ["學號", ""],
 ];
 
 const projectLinks = [
@@ -207,8 +206,7 @@ export default function Home() {
         <footer className="mt-10 rounded-lg border border-slate-200 bg-white/80 p-5 text-sm leading-7 text-slate-700">
           <p className="font-bold text-ink">作者資訊</p>
           <p className="mt-2">
-            國立勤益科技大學｜智慧自動化工程系｜四智三丙｜龔孟謙｜學號
-            
+            國立勤益科技大學｜智慧自動化工程系｜四智三丙｜龔孟謙
           </p>
           <p className="mt-2">
             本專案使用 Next.js、TypeScript 與 Tailwind CSS 製作，已上傳至
