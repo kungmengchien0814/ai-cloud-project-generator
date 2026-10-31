@@ -207,7 +207,6 @@ export default function Home() {
           <p className="font-bold text-ink">作者資訊</p>
           <p className="mt-2">
             國立勤益科技大學｜智慧自動化工程系｜四智三丙｜龔孟謙
-            
           </p>
           <p className="mt-2">
             本專案使用 Next.js、TypeScript 與 Tailwind CSS 製作，已上傳至
