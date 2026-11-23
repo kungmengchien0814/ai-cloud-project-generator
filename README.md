@@ -111,7 +111,7 @@ git push -u origin main
 ### 部署狀態與報告
 
 2026-10-27 已完成 Cloudflare Pages 部署，公開網址為 https://ai-cloud-project-generator.pages.dev/ 。原 Railway 試用已到期，服務離線。
-`deliverables/` 內 Word/PDF 已同步更新為 Cloudflare 版本，並保留原 Railway 部署歷程說明。
+期末報告（Word/PDF）已於作業評分後自 repo 移除。
 原作業指定 Railway，曾完成 Railway 部署；是否接受 Cloudflare 作為目前展示平台，需依老師規定。
 
 ## 期末展示建議
